@@ -6,4 +6,10 @@ fn main() {
     println!("  cargo run --example option_result");
     println!("  cargo run --example iterators");
     println!("  cargo run --example thread_pool");
+    println!("  cargo run --example collections");
+    println!("  cargo run --example strings");
+    println!("  cargo run --example filesystem");
+    println!("  cargo run --example io");
+    println!("  cargo run --example system_info");
+    println!("  cargo run --example smart_pointers");
 }
