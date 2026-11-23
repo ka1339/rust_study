@@ -5,4 +5,5 @@ fn main() {
     println!("  cargo run --example structs_enums");
     println!("  cargo run --example option_result");
     println!("  cargo run --example iterators");
+    println!("  cargo run --example thread_pool");
 }
