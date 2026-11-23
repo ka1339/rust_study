@@ -45,6 +45,7 @@ impl<T> Queue<T> {
 }
 
 fn main() {
+    // Stack<T>과 Queue<T>는 임의의 원소 타입 T를 저장하며, 비어 있을 때 꺼내기는 None을 반환합니다.
     // Stack은 후입선출(LIFO)이고 Queue는 선입선출(FIFO)입니다.
     let mut stack = Stack::new();
     stack.push("첫 번째");

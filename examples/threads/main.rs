@@ -64,4 +64,10 @@ fn main() {
             .lock()
             .expect("Mutex가 잠금 중에 오염되면 안 됩니다.")
     );
+
+    // thread::scope는 범위가 끝날 때 모든 쓰레드를 기다리므로 빌린 값도 안전하게 사용할 수 있습니다.
+    let label = String::from("범위 안에서만 쓰는 데이터");
+    thread::scope(|scope| {
+        scope.spawn(|| println!("빌려온 문자열: {label}"));
+    });
 }

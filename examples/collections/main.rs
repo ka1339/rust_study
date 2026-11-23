@@ -13,6 +13,13 @@ fn main() {
     }
     println!("민수의 최근 점수: {:?}", latest_scores.get("민수"));
 
+    // entry는 키의 존재 여부를 다시 조회하지 않고 값을 만들거나 갱신할 수 있습니다.
+    let mut score_counts = HashMap::new();
+    for (_, score) in &scores {
+        *score_counts.entry(*score).or_insert(0) += 1;
+    }
+    println!("점수별 횟수: {score_counts:?}");
+
     // HashSet은 중복을 제거하고 포함 여부를 빠르게 확인할 때 유용합니다.
     let names: HashSet<_> = scores.iter().map(|(name, _)| *name).collect();
     println!("고유한 이름: {names:?}");

@@ -12,6 +12,7 @@ enum Status {
 }
 
 fn classify(samples: &[i32], warning_limit: i32) -> Status {
+    // match는 모든 enum 변형을 처리하도록 컴파일 시점에 검사합니다.
     match samples.iter().copied().max() {
         None => Status::Empty,
         Some(maximum) if maximum > warning_limit => Status::Warning(maximum),

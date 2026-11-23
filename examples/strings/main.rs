@@ -8,6 +8,12 @@ fn main() {
     // format!은 원본 문자열을 소비하지 않고 새 문자열을 만듭니다.
     let report = format!("문자열: {message}, 글자 수: {}", message.chars().count());
     println!("{report}");
+    // len()은 UTF-8 바이트 수, chars().count()는 Unicode 스칼라 값의 개수입니다.
+    println!(
+        "UTF-8 바이트 수: {}, Unicode 스칼라 값 수: {}",
+        message.len(),
+        message.chars().count()
+    );
 
     // 문자열 슬라이스는 UTF-8 문자 경계가 중요하므로 문자 단위 처리는 chars()를 사용합니다.
     let words: Vec<_> = message.split_whitespace().collect();

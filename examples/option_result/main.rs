@@ -15,6 +15,7 @@ fn parse_limit(input: &str) -> Result<i32, ParseIntError> {
 
 fn main() -> Result<(), ParseIntError> {
     let samples = [21, 23, 24, 31];
+    // ?는 파싱이 실패하면 Err를 호출자에게 돌려보내고, 성공한 값만 꺼냅니다.
     let warning_limit = parse_limit("30")?;
 
     // Option은 값이 있을 수도 없을 수도 있음을 표현합니다.
@@ -23,7 +24,7 @@ fn main() -> Result<(), ParseIntError> {
         None => println!("측정값이 없습니다."),
     }
 
-    // Result는 성공(Ok) 또는 오류(Err)를 표현합니다.
+    // Result는 성공(Ok) 또는 오류(Err)를 표현하며, main의 반환형 덕분에 ?로 오류를 전파할 수 있습니다.
     println!("경고 기준: {warning_limit}");
     Ok(())
 }

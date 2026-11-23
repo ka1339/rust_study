@@ -10,7 +10,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         std::env::var("RUST_LOG").unwrap_or_else(|_| String::from("(설정되지 않음)"))
     );
 
-    // Instant는 경과 시간을 재고, SystemTime은 벽시계 시간을 다룰 때 사용합니다.
+    // Instant는 시스템 시각 변경의 영향을 덜 받는 경과 시간 측정에, SystemTime은 벽시계 시각에 사용합니다.
     let start = Instant::now();
     let total: u64 = (1..=100_000).sum();
     println!("계산 결과: {total}, 경과 시간: {:?}", start.elapsed());

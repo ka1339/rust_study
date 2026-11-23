@@ -15,4 +15,5 @@ fn main() {
     println!("  cargo run --example io");
     println!("  cargo run --example system_info");
     println!("  cargo run --example smart_pointers");
+    println!("  cargo run --example traits_generics");
 }

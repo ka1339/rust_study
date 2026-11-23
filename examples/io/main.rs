@@ -1,8 +1,9 @@
 use std::io::{self, BufRead, Cursor, Write};
 
 fn main() -> io::Result<()> {
-    // Cursor는 문자열을 읽기 가능한 입력처럼 다루게 해 주므로 테스트와 메모리 작업에 유용합니다.
+    // Cursor는 문자열을 읽기 가능한 입력처럼 다루게 해 주므로 파일 없이 입력 처리를 테스트할 때 유용합니다.
     let input = Cursor::new("사과\n배\n포도\n");
+    // lines()의 각 항목은 Result이므로 collect::<Result<_, _>>()는 한 줄이라도 실패하면 오류를 돌려줍니다.
     let lines: Vec<String> = input.lines().collect::<Result<_, _>>()?;
     println!("읽은 줄: {lines:?}");
 

@@ -1,7 +1,7 @@
 fn main() {
     let samples = vec![21, 23, 24, 31];
 
-    // iter()로 빌려 읽고 filter/map으로 변환한 결과를 수집합니다.
+    // iter()는 원소를 빌려오는 반복자를 만들고, filter/map은 collect 같은 소비자가 호출될 때 실행됩니다.
     let high_samples: Vec<i32> = samples
         .iter()
         .filter(|&&sample| sample > 23)
