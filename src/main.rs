@@ -5,6 +5,9 @@ fn main() {
     println!("  cargo run --example structs_enums");
     println!("  cargo run --example option_result");
     println!("  cargo run --example iterators");
+    println!("  cargo run --example threads");
+    println!("  cargo run --example synchronization");
+    println!("  cargo run --example data_structures");
     println!("  cargo run --example thread_pool");
     println!("  cargo run --example collections");
     println!("  cargo run --example strings");
