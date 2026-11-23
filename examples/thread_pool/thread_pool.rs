@@ -10,7 +10,7 @@ type Job = Box<dyn FnOnce() + Send + 'static>;
 // 등록된 동작은 여러 번 호출하고 공유하므로 Arc와 Fn + Send + Sync를 사용합니다.
 type Action = Arc<dyn Fn() + Send + Sync + 'static>;
 
-/// 등록된 명령 동작을 여러 worker 쓰레드에서 실행합니다.
+/// 이 예제에서 등록된 명령 동작을 여러 worker 쓰레드에서 실행합니다.
 pub struct ThreadPool {
     sender: Option<mpsc::Sender<Job>>,
     workers: Vec<JoinHandle<()>>,

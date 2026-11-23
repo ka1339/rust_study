@@ -1,8 +1,9 @@
-use rust_study::thread_pool::ThreadPool;
+mod thread_pool;
 use std::io::{self, BufRead};
 use std::sync::{Arc, mpsc};
 use std::thread;
 use std::time::Duration;
+use thread_pool::ThreadPool;
 
 fn main() -> io::Result<()> {
     let mut pool = ThreadPool::new(3);
