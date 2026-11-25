@@ -16,4 +16,7 @@ fn main() {
     println!("  cargo run --example system_info");
     println!("  cargo run --example smart_pointers");
     println!("  cargo run --example traits_generics");
+    println!("  cargo run --example socket");
+    println!("  cargo run --example http");
+    println!("  cargo run --example mqtt");
 }
